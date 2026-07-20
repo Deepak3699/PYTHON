@@ -23,7 +23,7 @@ else:
 
 n = int(input("Enter the number for how much time you want to print :- "))
 for i in range(1,n+1):
-    print(i)
+    print("Hello World")
 
 
 # Print natural numbers up to n 
@@ -114,6 +114,15 @@ for i in range(1, n):
     
     # 4. Check if 'n' is perfectly divisible by 'i' (remainder is 0)
     if n % i == 0:  
+        '''
+        Suppose user enters 6:
+        i = 1 -> 6 % 1 == 0 (True)  -> sum = 0 + 1 = 1
+        i = 2 -> 6 % 2 == 0 (True)  -> sum = 1 + 2 = 3
+        i = 3 -> 6 % 3 == 0 (True)  -> sum = 3 + 3 = 6
+        i = 4 -> 6 % 4 != 0 (False) -> sum stays 6
+        i = 5 -> 6 % 5 != 0 (False) -> sum stays 6
+        '''
+        
         # 5. If 'i' is a factor/divisor, add it to our running total
         sum = sum + i
 
@@ -124,5 +133,74 @@ if sum == n:
 else:
     # 8. If they do not match, it is not a perfect number
     print("Your number is not a perfect number")
+    
+    
+# Check whether the number is prime or not 
+# what is prime number which is only divide by its own and 1 only 2 factors 
+
+n = int(input("Enter the number to check prime or not :-"))
+count = 0
+for i in range(1,n+1):
+    if n%i == 0:
+        count = count+1
+if count == 2:
+    print("Number is PRIME ")
+else:
+    print("Number is Not PRIME ")
 
 
+
+# Reverse A string 
+a = "Deepak"
+print(a[::-1])
+print(len(a))
+ 
+# 1. Define a string variable named 'b' with a length of 7 characters.
+b = "Khuttan"
+
+# 2. Start a loop using range(start, stop, step).
+#    - Start: len(b) - 1  -> 7 - 1 = 6 (the index of the last letter 'n')
+#    - Stop:  -1          -> The loop stops BEFORE -1, meaning it includes 0 (the first letter 'K')
+#    - Step:  -1          -> Count downward by 1 each time
+for i in range(len(b)-1 , -1, -1):
+    
+    # 3. Print the character at the current index position 'i'.
+    #    - 1st loop: i = 6 -> prints b[6], which is 'n'
+    #    - 2nd loop: i = 5 -> prints b[5], which is 'a'
+    #    - 3rd loop: i = 4 -> prints b[4], which is 't'
+    #    - 4th loop: i = 3 -> prints b[3], which is 't'
+    #    - 5th loop: i = 2 -> prints b[2], which is 'u'
+    #    - 6th loop: i = 1 -> prints b[1], which is 'h'
+    #    - 7th loop: i = 0 -> prints b[0], which is 'K'
+    print(b[i])
+    
+    
+    
+#----------------- palindrome or not -------------------
+
+b = "Khuttan"
+c =""
+for i in range(len(b) - 1, -1, -1):
+    c = c+ b[i]
+if c == b:
+    print(f"Word {b} is palindrome ")
+else:
+    print(f"Not a palindrome")
+
+
+#--------------------  Find all special characters from a given string------------------
+
+str1 = "P@#yn26at^&i5ve"
+char = 0
+dig = 0
+spchar = 0
+for i in a:
+    if i.isdigit():
+        dig +=1
+    elif i.isalpha():
+        char +=1
+    else:
+        spchar +=1
+print(f" Your Digits are {dig} \n Your Alphabet are {char} \n Your Special Characters are {spchar}")
+
+print(dir(str))
